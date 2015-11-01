@@ -1,0 +1,605 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Calendar 1.3.2\n"
+"POT-Creation-Date: 2013-01-08 12:16+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Gregor Sušanj <gregor.susanj@aegee-maribor.si>\n"
+"Language-Team: Gregor Sušanj <sonicelo@gmail.com>\n"
+"Language: Slovenian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# Calendar translation file
+# Copyright (C) 2009 Kieran O'Shea
+# This file is distributed under the same license as the PACKAGE package.
+# Kieran O'Shea <kieran@kieranoshea.com>, 2009
+#: calendar.php:119 calendar.php:2176 calendar.php:2203
+msgid "Calendar"
+msgstr "Kolendar"
+
+#: calendar.php:123
+msgid "Manage Calendar"
+msgstr "Upravljaj kolendar"
+
+#: calendar.php:126 calendar.php:1906
+msgid "Manage Categories"
+msgstr "Upravljaj kategorije"
+
+#: calendar.php:127
+msgid "Calendar Config"
+msgstr "Konfiguracija kolendarja"
+
+#: calendar.php:127 calendar.php:1703
+msgid "Calendar Options"
+msgstr "Nastavitve kolendarja"
+
+#: calendar.php:750 calendar.php:1918
+msgid "ID"
+msgstr "ID"
+
+#: calendar.php:751 calendar.php:2195 calendar.php:2236 calendar.php:2277
+msgid "Title"
+msgstr "Naslov"
+
+#: calendar.php:752 calendar.php:900
+msgid "Start Date"
+msgstr "Začetni datum"
+
+#: calendar.php:753 calendar.php:925
+msgid "End Date"
+msgstr "Končni datum"
+
+#: calendar.php:754 calendar.php:2311
+msgid "Time"
+msgstr "Čas"
+
+#: calendar.php:755
+msgid "Recurs"
+msgstr "Ponavljajoči"
+
+#: calendar.php:756
+msgid "Repeats"
+msgstr "Ponovi"
+
+#: calendar.php:757 calendar.php:1713
+msgid "Author"
+msgstr "Avtor"
+
+#: calendar.php:758
+msgid "Category"
+msgstr "Kategorija"
+
+#: calendar.php:759 calendar.php:800 calendar.php:1921 calendar.php:1935
+msgid "Edit"
+msgstr "Uredi"
+
+#: calendar.php:760 calendar.php:801 calendar.php:1922 calendar.php:1944
+msgid "Delete"
+msgstr "Izbriši"
+
+#: calendar.php:774 calendar.php:788 calendar.php:1939
+msgid "N/A"
+msgstr "N/A"
+
+#: calendar.php:778
+msgid "Never"
+msgstr "Nikoli"
+
+#: calendar.php:779
+msgid "Weekly"
+msgstr "Tedensko"
+
+#: calendar.php:780
+msgid "Monthly (date)"
+msgstr "Mesečno (datum)"
+
+#: calendar.php:781
+msgid "Monthly (day)"
+msgstr "Mesečno (dan)"
+
+#: calendar.php:782
+msgid "Yearly"
+msgstr "Letno"
+
+#: calendar.php:789
+msgid "Forever"
+msgstr "Zmeraj"
+
+#: calendar.php:790
+msgid "Times"
+msgstr "Krat"
+
+#: calendar.php:801
+msgid "Are you sure you want to delete this event?"
+msgstr "Ali ste prepričani, da želite izbrisati ta dogodek?"
+
+#: calendar.php:812
+msgid "There are no events in the database!"
+msgstr "V bazi ni dogodkov!"
+
+#: calendar.php:828
+msgid "Bad Monkey! No banana!"
+msgstr "Poredna opica! Danes ne dobiš banane!"
+
+#: calendar.php:836
+msgid "An event with that ID couldn't be found"
+msgstr "Dogodek s izbranim ID-jem ni najden"
+
+#: calendar.php:863
+msgid "Event Title"
+msgstr "Naslov dogodka"
+
+#: calendar.php:868
+msgid "Event Description"
+msgstr "Opis dogodka"
+
+#: calendar.php:872
+msgid "Event Category"
+msgstr "Kategorija dogodka"
+
+#: calendar.php:896
+msgid "Event Link (Optional)"
+msgstr "Povezava dogodka (po izbiri)"
+
+#: calendar.php:948
+msgid "Time (hh:mm)"
+msgstr "Čas (hh:mm)"
+
+#: calendar.php:966
+msgid "Optional, set blank if not required."
+msgstr "Po izbiri. Pusti prazno, če je nepotrebno"
+
+#: calendar.php:966
+msgid "Current time difference from GMT is "
+msgstr "Trenutna razlika v času od GMT je"
+
+#: calendar.php:966
+msgid " hour(s)"
+msgstr " ur(a)"
+
+#: calendar.php:970
+msgid "Recurring Events"
+msgstr "Ponavljajoči dogodki"
+
+#: calendar.php:1015
+msgid "Repeats for"
+msgstr "Se ponavlja"
+
+#: calendar.php:1018
+msgid "None"
+msgstr "Noben"
+
+#: calendar.php:1019
+msgid "Weeks"
+msgstr "Tedni"
+
+#: calendar.php:1020
+msgid "Months (date)"
+msgstr "Mesecev (datum)"
+
+#: calendar.php:1021
+msgid "Months (day)"
+msgstr "Mesecev (dan)"
+
+#: calendar.php:1022
+msgid "Years"
+msgstr "Leta"
+
+#: calendar.php:1024
+msgid ""
+"Entering 0 means forever. Where the recurrance interval is left at none, the "
+"event will not reoccur."
+msgstr ""
+"Vpisana 0 pomeni večno. Kjer interval ni vpisan se dogodek ne bo ponovil."
+
+#: calendar.php:1031 calendar.php:1769 calendar.php:1855 calendar.php:1904
+msgid "Save"
+msgstr "Shrani"
+
+#: calendar.php:1118 calendar.php:1125 calendar.php:1132 calendar.php:1157
+#: calendar.php:1168 calendar.php:1179 calendar.php:1191 calendar.php:1209
+#: calendar.php:1279 calendar.php:1286 calendar.php:1293 calendar.php:1318
+#: calendar.php:1329 calendar.php:1340 calendar.php:1352 calendar.php:1402
+#: calendar.php:1422
+msgid "Error"
+msgstr "Napaka"
+
+#: calendar.php:1118 calendar.php:1279
+msgid ""
+"Your event end date must be either after or the same as your event begin date"
+msgstr "Datum konca dogodka mora biti enak ali za začetnim datumom dogodka"
+
+#: calendar.php:1125 calendar.php:1286
+msgid ""
+"Your date formatting is correct but one or more of your dates is invalid. "
+"Check for number of days in month and leap year related errors."
+msgstr ""
+"Format datuma je nepravilen ali pa je eden izmed datumov neveljaven. Preveri "
+"število dni v mesecu ter prestopna leta."
+
+#: calendar.php:1132 calendar.php:1293
+msgid ""
+"Both start and end dates must be entered and be in the format YYYY-MM-DD"
+msgstr "Začetni in končni datum mora viti vpisan v formatu YYYY-MM-DD"
+
+#: calendar.php:1157 calendar.php:1318
+msgid "The time field must either be blank or be entered in the format hh:mm"
+msgstr "Polje s časom mora biti ali prazno ali pa v obliki hh:mm"
+
+#: calendar.php:1168 calendar.php:1329
+msgid ""
+"The URL entered must either be prefixed with http:// or be completely blank"
+msgstr "Vpisan naslov mora vsebovati predpono http:// ali pa morabiti prazen"
+
+#: calendar.php:1179 calendar.php:1340
+msgid "The event title must be between 1 and 30 characters in length"
+msgstr "Naslov dogodka mora vsebovati od 1 do 30 znakov."
+
+#: calendar.php:1191 calendar.php:1352
+msgid ""
+"The repetition value must be 0 unless a type of recurrance is selected in "
+"which case the repetition value must be 0 or higher"
+msgstr ""
+"Ponavljajoča vrednost mora biti 0, razen če je izbran tip ponavljanja, nakar "
+"mora biti vrednost večje od 0."
+
+#: calendar.php:1209
+msgid ""
+"An event with the details you submitted could not be found in the database. "
+"This may indicate a problem with your database or the way in which it is "
+"configured."
+msgstr ""
+"Dogodek s poslanimi podatki ne obstaja v podatkovni bazi. To lahko nakazuje "
+"na težavo z podatkovno bazo ali konfiguracijo."
+
+#: calendar.php:1215
+msgid "Event added. It will now show in your calendar."
+msgstr "Dogodek je dodan. Sedaj se bo pojavil v vašem kolendarju."
+
+#: calendar.php:1249 calendar.php:1370
+msgid "Failure"
+msgstr "Neuspešno"
+
+#: calendar.php:1249
+msgid "You can't update an event if you haven't submitted an event id"
+msgstr "Dogodek ni možno posodbiti brez ID dogodka"
+
+#: calendar.php:1370
+msgid ""
+"The database failed to return data to indicate the event has been updated "
+"sucessfully. This may indicate a problem with your database or the way in "
+"which it is configured."
+msgstr ""
+"Podatkovna baza ni potrdila, ali je dogodek posodobljen uspešno. To lahko "
+"nakazuje težave z podatkovno bazo ali konfiguracijo."
+
+#: calendar.php:1376
+msgid "Event updated successfully"
+msgstr "Dogodek je uspešno posodobljen"
+
+#: calendar.php:1402
+msgid "You can't delete an event if you haven't submitted an event id"
+msgstr "Dogodek ni možno izbrisati brez ID dogodka"
+
+#: calendar.php:1416
+msgid "Event deleted successfully"
+msgstr "Dogodek je uspešno izbrisan"
+
+#: calendar.php:1422
+msgid ""
+"Despite issuing a request to delete, the event still remains in the "
+"database. Please investigate."
+msgstr ""
+"Čeprav ste želeli izbrisati dogodek iz podatkovne baze, dogodek še vedno "
+"obstaja. Prosim preverite nastavitve."
+
+#: calendar.php:1438
+msgid "Edit Event"
+msgstr "Uredi dogodek"
+
+#: calendar.php:1442
+msgid "You must provide an event id in order to edit it"
+msgstr "Za urejanje dogodka je potreben ID dogodka"
+
+#: calendar.php:1452
+msgid "Add Event"
+msgstr "Dodaj dogodek"
+
+#: calendar.php:1455
+msgid "Manage Events"
+msgstr "Upravljaj dogodke"
+
+#: calendar.php:1545
+msgid "Settings saved"
+msgstr "Nastavitve shranjene"
+
+#: calendar.php:1709
+msgid "Choose the lowest user group that may manage events"
+msgstr "Izberi najnižjo vlogo, ki ima dovoljenje upravljati dogodke"
+
+#: calendar.php:1711
+msgid "Subscriber"
+msgstr "Naročnik"
+
+#: calendar.php:1712
+msgid "Contributor"
+msgstr "Prispevkar"
+
+#: calendar.php:1714
+msgid "Editor"
+msgstr "Urednik"
+
+#: calendar.php:1715
+msgid "Administrator"
+msgstr "Administrator"
+
+#: calendar.php:1720
+msgid "Do you want to display the author name on events?"
+msgstr "Ali želite prikazati avtorja dogodka?"
+
+#: calendar.php:1722 calendar.php:1730 calendar.php:1738 calendar.php:1746
+#: calendar.php:1755
+msgid "Yes"
+msgstr "Da"
+
+#: calendar.php:1723 calendar.php:1731 calendar.php:1739 calendar.php:1747
+#: calendar.php:1756
+msgid "No"
+msgstr "Ne"
+
+#: calendar.php:1728
+msgid "Display a jumpbox for changing month and year quickly?"
+msgstr "Omogoči hitro spreminjanje leta in meseca?"
+
+#: calendar.php:1736
+msgid "Display todays events?"
+msgstr "Prikaži današnje dogodke?"
+
+#: calendar.php:1744
+msgid "Display upcoming events?"
+msgstr "Prikaži prihajajoče dogodke?"
+
+#: calendar.php:1749
+msgid "for"
+msgstr "za"
+
+#: calendar.php:1749
+msgid "days into the future"
+msgstr "dni v prihodnost"
+
+#: calendar.php:1753
+msgid "Enable event categories?"
+msgstr "Omogoči kategorije dogodkov?"
+
+#: calendar.php:1761
+msgid "Configure the stylesheet for Calendar"
+msgstr "Konfiguriraj oblikovanje kolendarja"
+
+#: calendar.php:1763
+msgid "Tick this box if you wish to reset the Calendar style to default"
+msgstr ""
+"Označi ta kvadratek, če želite resetirati oblikovanje kolendarja na privzeto"
+
+#: calendar.php:1820
+msgid "Category added successfully"
+msgstr "Kategorija uspešno dodana"
+
+#: calendar.php:1828
+msgid "Category deleted successfully"
+msgstr "Kategorija uspešno izbrisana"
+
+#: calendar.php:1836
+msgid "Edit Category"
+msgstr "Uredi kategorijo"
+
+#: calendar.php:1844 calendar.php:1893 calendar.php:1919
+msgid "Category Name"
+msgstr "Ime kategorije"
+
+#: calendar.php:1848 calendar.php:1897
+msgid "Category Colour (Hex format)"
+msgstr "Barva kategorije (šestnajstiški format #xxxxxx)"
+
+#: calendar.php:1865
+msgid "Category edited successfully"
+msgstr "Kategorija uspešno urejena"
+
+#: calendar.php:1885
+msgid "Add Category"
+msgstr "Dodaj kategorijo"
+
+#: calendar.php:1920
+msgid "Category Colour"
+msgstr "Barva kategorije"
+
+#: calendar.php:1944
+msgid "Are you sure you want to delete this category?"
+msgstr "Ali ste prepričani, da želite izbrisati izbrano kategorijo?"
+
+#: calendar.php:1957
+msgid "There are no categories in the database - something has gone wrong!"
+msgstr "V podatkovni bazi ni kategorij - nekaj je šlo narobe!"
+
+#: calendar.php:2031 calendar.php:2038
+msgid "Next"
+msgstr "Naslednji"
+
+#: calendar.php:2051 calendar.php:2058
+msgid "Prev"
+msgstr "Prejšnji"
+
+#: calendar.php:2089 calendar.php:2128
+msgid "all day"
+msgstr "ves dan"
+
+#: calendar.php:2092 calendar.php:2131
+msgid "at"
+msgstr "ob"
+
+#: calendar.php:2197 calendar.php:2238 calendar.php:2279
+msgid "Comma separated category id list"
+msgstr "Seznam kategorij, ločenih z vejico"
+
+#: calendar.php:2217 calendar.php:2244
+msgid "Today's Events"
+msgstr "Današnji dogodki"
+
+#: calendar.php:2258 calendar.php:2285
+msgid "Upcoming Events"
+msgstr "Prihajajoči dogodki"
+
+#: calendar.php:2316
+msgid "Posted by"
+msgstr "Ustvaril"
+
+#: calendar.php:2558 calendar.php:2563
+msgid "Sunday"
+msgstr "Nedelja"
+
+#: calendar.php:2558 calendar.php:2563
+msgid "Monday"
+msgstr "Ponedeljek"
+
+#: calendar.php:2558 calendar.php:2563
+msgid "Tuesday"
+msgstr "Torek"
+
+#: calendar.php:2558 calendar.php:2563
+msgid "Wednesday"
+msgstr "Sreda"
+
+#: calendar.php:2558 calendar.php:2563
+msgid "Thursday"
+msgstr "Četrtek"
+
+#: calendar.php:2558 calendar.php:2563
+msgid "Friday"
+msgstr "Petek"
+
+#: calendar.php:2558 calendar.php:2563
+msgid "Saturday"
+msgstr "Sobota"
+
+#: calendar.php:2567 calendar.php:2667 calendar.php:2873
+msgid "January"
+msgstr "Januar"
+
+#: calendar.php:2567 calendar.php:2668 calendar.php:2873
+msgid "February"
+msgstr "Februar"
+
+#: calendar.php:2567 calendar.php:2669 calendar.php:2873
+msgid "March"
+msgstr "Marec"
+
+#: calendar.php:2567 calendar.php:2670 calendar.php:2873
+msgid "April"
+msgstr "April"
+
+#: calendar.php:2567 calendar.php:2671 calendar.php:2873
+msgid "May"
+msgstr "Maj"
+
+#: calendar.php:2567 calendar.php:2672 calendar.php:2873
+msgid "June"
+msgstr "Junij"
+
+#: calendar.php:2567 calendar.php:2673 calendar.php:2873
+msgid "July"
+msgstr "Julij"
+
+#: calendar.php:2567 calendar.php:2674 calendar.php:2874
+msgid "August"
+msgstr "Avgust"
+
+#: calendar.php:2567 calendar.php:2675 calendar.php:2874
+msgid "September"
+msgstr "September"
+
+#: calendar.php:2567 calendar.php:2676 calendar.php:2874
+msgid "October"
+msgstr "Oktober"
+
+#: calendar.php:2567 calendar.php:2677 calendar.php:2874
+msgid "November"
+msgstr "November"
+
+#: calendar.php:2567 calendar.php:2678 calendar.php:2874
+msgid "December"
+msgstr "December"
+
+#: calendar.php:2666
+msgid "Month"
+msgstr "Mesec"
+
+#: calendar.php:2680
+msgid "Year"
+msgstr "Leto"
+
+#: calendar.php:2713
+msgid "Go"
+msgstr "Pojdi"
+
+#: calendar.php:2813
+msgid "Category Key"
+msgstr "Legenda kategorij"
+
+#: calendar.php:2825
+msgid "Calendar developed and supported by "
+msgstr "Razvijalec koledarja "
+
+#: calendar.php:2864 calendar.php:2869
+msgid "Su"
+msgstr "Ned"
+
+#: calendar.php:2864 calendar.php:2869
+msgid "Mo"
+msgstr "Pon"
+
+#: calendar.php:2864 calendar.php:2869
+msgid "Tu"
+msgstr "Tor"
+
+#: calendar.php:2864 calendar.php:2869
+msgid "We"
+msgstr "Sre"
+
+#: calendar.php:2864 calendar.php:2869
+msgid "Th"
+msgstr "Čet"
+
+#: calendar.php:2864 calendar.php:2869
+msgid "Fr"
+msgstr "Pet"
+
+#: calendar.php:2864 calendar.php:2869
+msgid "Sa"
+msgstr "Sob"
+
+# Calendar translation file
+# Copyright (C) 2009 Kieran O'Shea
+# This file is distributed under the same license as the PACKAGE package.
+# Kieran O'Shea <kieran@kieranoshea.com>, 2009
+#: calendar.php:3039
+msgid "Calendar by "
+msgstr "Kolendar razvija "
+
+#~ msgid "Description"
+#~ msgstr "Opis"
+
+#~ msgid "Select Date"
+#~ msgstr "Izbrei datum"
+
+#~ msgid ""
+#~ "The event title must be between 1 and 30 characters in length and contain "
+#~ "no punctuation. Spaces are allowed but the title must not start with one."
+#~ msgstr ""
+#~ "Naslov dogodka mora biti med 1 in 30 znakov ter ne sme vsebovati ločil. "
+#~ "Presledki so dovoljeni vendar se ne sme pričeti z njim."
