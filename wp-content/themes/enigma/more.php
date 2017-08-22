@@ -13,14 +13,14 @@ class More_Storefront_Control extends WP_Customize_Control {
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<p>
 				<?php
-					printf( __( 'There\'s a range of Storefront extensions available to put additional power in your hands. Check out the %sStorefront%s page in your dashboard for more information.', 'storefront' ), '<a href="' . esc_url( admin_url() . 'themes.php?page=storefront-welcome#add-ons' ) .'">', '</a>' );
+					printf( __( 'There\'s a range of Storefront extensions available to put additional power in your hands. Check out the %sStorefront%s page in your dashboard for more information.', 'enigma' ), '<a href="' . esc_url( admin_url() . 'themes.php?page=storefront-welcome#add-ons' ) .'">', '</a>' );
 				?>
 			</p>
 
-			<span class="customize-control-title"><?php _e( 'Enjoying Storefront?', 'storefront' ); ?></span>
+			<span class="customize-control-title"><?php _e( 'Enjoying Storefront?', 'enigma' ); ?></span>
 			<p>
 				<?php
-					printf( __( 'Why not leave us a review on %sWordPress.org%s?  We\'d really appreciate it!', 'storefront' ), '<a href="https://wordpress.org/themes/storefront">', '</a>' );
+					printf( __( 'Why not leave us a review on %sWordPress.org%s?  We\'d really appreciate it!', 'enigma' ), '<a href="https://wordpress.org/themes/storefront">', '</a>' );
 				?>
 			</p>
 		</label>

@@ -5,13 +5,13 @@
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
 			<h1><?php if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'weblizar' ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Daily Archives: %s', 'enigma' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'weblizar' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'weblizar' ) ) . '</span>' );
+						printf( __( 'Monthly Archives: %s', 'enigma' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'enigma' ) ) . '</span>' );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'weblizar' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'weblizar' ) ) . '</span>' );
+						printf( __( 'Yearly Archives: %s', 'enigma' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'enigma' ) ) . '</span>' );
 					else :
-						_e( 'Archives', '' );
+						_e( 'Archives', 'enigma' );
 					endif; ?>
 			</h1></div>
 		<?php endif; ?>	

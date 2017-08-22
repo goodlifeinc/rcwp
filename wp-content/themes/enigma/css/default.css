@@ -3,8 +3,15 @@
 } 
 /*  header contact info section ***/
 .header_section{
-	background-color:#31A3DD;
 	color:#fff;
+} 
+.hd_cover {
+    color: #fff;
+    background-size: cover;
+	 background-color:#31A3DD;
+}
+.cover{
+	background:rgba(0,0,0,0.3);
 }
 /** navbar menus ***/
 .navigation_menu{

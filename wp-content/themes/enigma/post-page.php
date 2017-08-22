@@ -10,7 +10,7 @@
 		</div>
 		<?php endif; ?>
 		<div class="enigma_blog_post_content">
-			<?php the_content( __( 'Read More' , 'weblizar' ) ); ?>
+			<?php the_content( __( 'Read More' , 'enigma' ) ); ?>
 		</div>
 </div>	
 <div class="push-right">

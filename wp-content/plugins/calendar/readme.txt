@@ -3,8 +3,8 @@ Contributors: KieranOShea
 Donate link: http://www.kieranoshea.com
 Tags: calendar, dates, times, events
 Requires at least: 4.3.1
-Tested up to: 4.3.1
-Stable tag: 1.3.6
+Tested up to: 4.6
+Stable tag: 1.3.9
 
 A simple but effective Calendar plugin for WordPress that allows you to 
 manage your events and appointments and display them to the world.
@@ -41,6 +41,7 @@ Features:
 *   Events can be links pointing to a location of your choice
 *   Full internationalisation is possible
 *   Comaptible with WordPress MU
+*   iCalendar feed of events can be made accessible
 
 == Installation ==
 
@@ -225,6 +226,17 @@ You've not called wp_head() in your theme's header and/or wp_footer() in your th
 5. The options screen of Calendar
 
 == Changelog ==
+
+= 1.3.9 =
+*   Improved the feed of events to use iCalendar format
+
+= 1.3.8 =
+*   Fixed a reported XSS issue with the date switcher
+*   Added a RSS feed of events
+
+= 1.3.7 =
+*   Added a further fix for dollar signs in event titles and descriptions
+*   Reverted potential IIS related fixes as these did not fix anything for IIS users and caused problems for others
 
 = 1.3.6 =
 *   Fixed bug with all categories showing in the category key, even when the calendar above is filtered on a subset of available categories

@@ -26,17 +26,7 @@
                         play: true
                     }
                 });
-         
-			
-          
-			
-			
-			   
-           
-           
-				
-            
-			
+  	
 		}
 		jQuery(window).resize(function () {
                 wl_caroufredsel();

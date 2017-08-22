@@ -2,6 +2,7 @@
 /** Theme Name	: Enigma
 * Theme Core Functions and Codes
 */
+
 	/**Includes required resources here**/
 	define('WL_TEMPLATE_DIR_URI', get_template_directory_uri());
 	define('WL_TEMPLATE_DIR', get_template_directory());
@@ -11,48 +12,52 @@
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
 	require(dirname(__FILE__).'/customizer.php');
-	
+	require get_template_directory() . '/core/custom-header.php';
+		require( get_template_directory() . '/class-tgm-plugin-activation.php' );
 	//Sane Defaults
 	function weblizar_default_settings()
 {
-	$ImageUrl = WL_TEMPLATE_DIR_URI ."/images/1.png";
-	$ImageUrl2 = WL_TEMPLATE_DIR_URI ."/images/2.png";
-	$ImageUrl3 = WL_TEMPLATE_DIR_URI ."/images/3.png";
-	$ImageUrl4 = WL_TEMPLATE_DIR_URI ."/images/portfolio1.png";
-	$ImageUrl5 = WL_TEMPLATE_DIR_URI ."/images/portfolio2.png";
-	$ImageUrl6 = WL_TEMPLATE_DIR_URI ."/images/portfolio3.png";
-	$ImageUrl7 = WL_TEMPLATE_DIR_URI ."/images/portfolio4.png";
-	$ImageUrl8 = WL_TEMPLATE_DIR_URI ."/images/portfolio5.png";
-	$ImageUrl9 = WL_TEMPLATE_DIR_URI ."/images/portfolio6.png";
+	$ImageUrl =  esc_url(get_template_directory_uri() ."/images/1.png");
+	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
+	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
+	$ImageUrl4 = esc_url(get_template_directory_uri() ."/images/portfolio1.png");
+	$ImageUrl5 = esc_url(get_template_directory_uri() ."/images/portfolio2.png");
+	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
+	$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
 	$wl_theme_options=array(
-			//Logo and Fevicon header			
+			//Logo and Fevicon header
+			'title_position'=>'',
+			'upload__header_image'=>'',
 			'upload_image_logo'=>'',
 			'height'=>'55',
 			'width'=>'150',
 			'_frontpage' => '1',
-			'blog_count'=>'3',
-			'upload_image_favicon'=>'',			
+			'blog_count'=>'3',			
 			'custom_css'=>'',
+			'excerpt_blog'=>'55',
+
+			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,
-			'slide_title_1' => __('Slide Title', 'weblizar' ),
-			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'weblizar' ),
-			'slide_btn_text_1' => __('Read More', 'weblizar' ),
+			'slide_title_1' => __('Slide Title', 'enigma' ),
+			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'enigma' ),
+			'slide_btn_text_1' => __('Read More', 'enigma' ),
 			'slide_btn_link_1' => '#',
 			'slide_image_2' => $ImageUrl2,
-			'slide_title_2' => __('variations of passages', 'weblizar' ),
-			'slide_desc_2' => __('Contrary to popular belief, Lorem Ipsum is not simply random text', 'weblizar' ),
-			'slide_btn_text_2' => __('Read More', 'weblizar' ),
+			'slide_title_2' => __('variations of passages', 'enigma' ),
+			'slide_desc_2' => __('Contrary to popular belief, Lorem Ipsum is not simply random text', 'enigma' ),
+			'slide_btn_text_2' => __('Read More', 'enigma' ),
 			'slide_btn_link_2' => '#',
 			'slide_image_3' => $ImageUrl3,
-			'slide_title_3' => __('Contrary to popular ', 'weblizar' ),
-			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'weblizar' ),
-			'slide_btn_text_3' => __('Read More', 'weblizar' ),
+			'slide_title_3' => __('Contrary to popular ', 'enigma' ),
+			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'enigma' ),
+			'slide_btn_text_3' => __('Read More', 'enigma' ),
 			'slide_btn_link_3' => '#',			
 			// Footer Call-Out
 			'fc_home'=>'1',			
-			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'weblizar' ),
-			'fc_btn_txt' => __('More Features', 'weblizar' ),
+			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),
+			'fc_btn_txt' => __('More Features', 'enigma' ),
 			'fc_btn_link' =>"#",
+			'fc_icon' => 'fa fa-thumbs-up', 
 			//Social media links
 			'header_social_media_in_enabled'=>'1',
 			'footer_section_social_media_enbled'=>'1',
@@ -62,48 +67,61 @@
 			'youtube_link' =>"#",
 			'instagram' =>"#",
 			'gplus' =>"#",
+			'vk_link' =>"#",
+			'qq_link' => "#",
+			'whatsapp_link' => "#",
 			
 			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',
-			'footer_customizations' => __(' &#169; 2015 Enigma Theme', 'weblizar' ),
-			'developed_by_text' => __('Theme Developed By', 'weblizar' ),
-			'developed_by_weblizar_text' => __('Weblizar Themes', 'weblizar' ),
+			'footer_customizations' => __(' &#169; 2016 Enigma Theme', 'enigma' ),
+			'developed_by_text' => __('Theme Developed By', 'enigma' ),
+			'developed_by_weblizar_text' => __('Weblizar Themes', 'enigma' ),
 			'developed_by_link' => 'http://weblizar.com/',
-			
-			'home_service_heading' => __('Our Services', 'weblizar' ),
-			'service_1_title'=>__("Idea",'weblizar' ),
-			'service_1_icons'=>"fa fa-google",
-			'service_1_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
+			'service_home'=>'1',
+			'home_service_heading' => __('Our Services', 'enigma' ),
+			'service_1_title'=>__("Idea",'enigma' ),
+			'service_1_icons'=>"fa-google",
+			'service_1_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_1_link'=>"#",
 			
-			'service_2_title'=>__('Records', 'weblizar' ),
-			'service_2_icons'=>"fa fa-database",
-			'service_2_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
+			'service_2_title'=>__('Records', 'enigma' ),
+			'service_2_icons'=>"fa-database",
+			'service_2_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_2_link'=>"#",
 			
-			'service_3_title'=>__("WordPress", 'weblizar' ),
-			'service_3_icons'=>"fa fa-wordpress",
-			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
+			'service_3_title'=>__("WordPress", 'enigma' ),
+			'service_3_icons'=>"fa-wordpress",
+			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_3_link'=>"#",			
-
+			'product_title'=>'',
+			
+			
 			//Portfolio Settings:
 			'portfolio_home'=>'1',
-			'port_heading' => __('Recent Works', 'weblizar' ),
+			'port_heading' => __('Recent Works', 'enigma' ),
 			'port_1_img'=> $ImageUrl4,
-			'port_1_title'=>__('Bonorum', 'weblizar' ),
+			'port_1_title'=>__('Bonorum', 'enigma' ),
 			'port_1_link'=>'#',
 			'port_2_img'=> $ImageUrl5,			
-			'port_2_title'=>__('Content', 'weblizar' ),
+			'port_2_title'=>__('Content', 'enigma' ),
 			'port_2_link'=>'#',
 			'port_3_img'=> $ImageUrl6,
-			'port_3_title'=>__('dictionary', 'weblizar' ),
+			'port_3_title'=>__('dictionary', 'enigma' ),
 			'port_3_link'=>'#',
 			'port_4_img'=> $ImageUrl7,
-			'port_4_title'=>__('randomised', 'weblizar' ),
+			'port_4_title'=>__('randomised', 'enigma' ),
 			'port_4_link'=>'#',
 			//BLOG Settings
 			'show_blog' => '1',
-			'blog_title'=>__('Latest Blog', 'weblizar' )
+			'blog_title'=>__('Latest Blog', 'enigma' ),
+			'blog_speed'=>'2000',
+			
+			//Google font style
+			'main_heading_font' => 'Open Sans',
+			'menu_font' => 'Open Sans',
+			'theme_title' => 'Open Sans',
+			'desc_font_all' => 'Open Sans'
+			
 			
 		);
 		return apply_filters( 'enigma_options', $wl_theme_options );
@@ -115,7 +133,17 @@
         weblizar_default_settings() 
     );    
 	}
-	require( WL_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel
+	
+	$args = array(
+	'flex-width'    => true,
+	'width'         => 2000,
+	'flex-height'    => true,
+	'height'        => 100,
+	'default-image' => get_template_directory_uri() . '/images/header-bg.jpg',
+	'wp-head-callback'   => 'enigma_header_style',
+);
+add_theme_support( 'custom-header', $args );
+
 	
 	/*After Theme Setup*/
 	add_action( 'after_setup_theme', 'weblizar_head_setup' ); 	
@@ -131,16 +159,47 @@
 		add_image_size('wl_page_thumb',730,350,true);	
 		add_image_size('blog_2c_thumb',570,350,true);
 		add_theme_support( 'title-tag' );
+		
+		// Logo
+		add_theme_support( 'custom-logo', array(
+			'width'       => 250,
+			'height'      => 250,
+			'flex-width'  => true,
+			'flex-height'  => true,
+		));
+		
 		// Load text domain for translation-ready
-		load_theme_textdomain( 'weblizar', WL_TEMPLATE_DIR_CORE . '/lang' );	
+		load_theme_textdomain( 'enigma', WL_TEMPLATE_DIR_CORE . '/lang' );	
 		
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menu( 'primary', __( 'Primary Menu', 'weblizar' ) );
+		register_nav_menu( 'primary', __( 'Primary Menu', 'enigma' ) );
 		// theme support 	
-		$args = array('default-color' => '000000',);
+		$args = array('default-color' => 'ffffff',);
 		add_theme_support( 'custom-background', $args); 
-		add_theme_support( 'automatic-feed-links'); 
+		add_theme_support( 'automatic-feed-links');
+		$defaults = array(
+	'default-image'          => '',
+	'width'                  => 0,
+	'height'                 => 0,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'uploads'                => true,
+	'random-default'         => false,
+	'header-text'            => true,
+	'default-text-color'     => '',
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $defaults );
+		
+		
+		/*
+		 * This theme styles the visual editor to resemble the theme style,
+		 * specifically font, colors, icons, and column width.
+		 */
+		add_editor_style('css/editor-style.css');
 		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here				
 	}
 	
@@ -148,7 +207,7 @@
 	// Read more tag to formatting in blog page 
 	function weblizar_content_more($more)
 	{  							
-	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>"'.__('Read More', 'weblizar' ).'"</a></div>';
+	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>"'.__('Read More', 'enigma' ).'"</a></div>';
 	}   
 	add_filter( 'the_content_more_link', 'weblizar_content_more' );
 	
@@ -158,6 +217,57 @@
 	return '';
 	}
 	add_filter('excerpt_more', 'weblizar_excerpt_more');
+	
+	if ( ! function_exists( 'enigma_header_style' ) ) :
+	function enigma_header_style() {
+		$header_text_color = get_header_textcolor();
+	// If no custom options for text are set, let's bail.
+	// get_header_textcolor() options: add_theme_support( 'custom-header' ) is default, hide text (returns 'blank') or any hex value.
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) == $header_text_color ) {
+		return;
+	}
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style id="fashionair-custom-header-styles" type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == $header_text_color ) :
+	?>
+		.head-contact-info li a{
+		color:#fff;
+		}
+		.hd_cover {
+		color: #fff;
+		}
+		.logo p {
+		color: #fff;
+		}
+		.social i {
+		color: #fff;
+		}
+		.social li {
+		border: 2px solid #ffffff;
+		}
+		.logo a {
+			color: #fff;
+		}
+	<?php
+		// If the user has set a custom color for the text use that.
+		else :
+	?>
+		.head-contact-info li a, .hd_cover, .logo p, .social i, .logo a{
+			color: #<?php echo esc_attr( $header_text_color ); ?>;
+		}
+		.social li {
+			border:2px solid #<?php echo esc_attr( $header_text_color ); ?>;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; 
+	
+	
 	/*
 	* Weblizar widget area
 	*/
@@ -165,9 +275,9 @@
 	function weblizar_widgets_init() {
 	/*sidebar*/
 	register_sidebar( array(
-			'name' => __( 'Sidebar', 'weblizar' ),
+			'name' => __( 'Sidebar', 'enigma' ),
 			'id' => 'sidebar-primary',
-			'description' => __( 'The primary widget area', 'weblizar' ),
+			'description' => __( 'The primary widget area', 'enigma' ),
 			'before_widget' => '<div class="enigma_sidebar_widget">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="enigma_sidebar_widget_title"><h2>',
@@ -175,9 +285,9 @@
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Footer Widget Area', 'weblizar' ),
+			'name' => __( 'Footer Widget Area', 'enigma' ),
 			'id' => 'footer-widget-area',
-			'description' => __( 'footer widget area', 'weblizar' ),
+			'description' => __( 'footer widget area', 'enigma' ),
 			'before_widget' => '<div class="col-md-3 col-sm-6 enigma_footer_widget_column">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="enigma_footer_widget_title">',
@@ -188,7 +298,7 @@
 	/* Breadcrumbs  */
 	function weblizar_breadcrumbs() {
     $delimiter = '';
-    $home = __('Home', 'weblizar' ); // text for the 'Home' link
+    $home = __('Home', 'enigma' ); // text for the 'Home' link
     $before = '<li>'; // tag before the current crumb
     $after = '</li>'; // tag after the current crumb
     echo '<ul class="breadcrumb">';
@@ -203,7 +313,7 @@
         $parentCat = get_category($thisCat->parent);
         if ($thisCat->parent != 0)
             echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-        echo $before . ' _e("Archive by category","weblizar") "' . single_cat_title('', false) . '"' . $after;
+        echo $before . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . $after;
     } elseif (is_day()) {
         echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
         echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
@@ -232,8 +342,8 @@
     } elseif (is_attachment()) {
         $parent = get_post($post->post_parent);
         $cat = get_the_category($parent->ID);
-        $cat = $cat[0];
-        echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+        //$cat = $cat[0];
+       // echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
         echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
     } elseif (is_page() && !$post->post_parent) {
@@ -251,16 +361,16 @@
             echo $crumb . ' ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
     } elseif (is_search()) {
-        echo $before . _e("Search results for","weblizar")  . get_search_query() . '"' . $after;
+        echo $before . _e("Search results for","enigma")  . get_search_query() . '"' . $after;
 
     } elseif (is_tag()) {        
-		echo $before . _e('Tag','weblizar') . single_tag_title('', false) . $after;
+		echo $before . _e('Tag','enigma') . single_tag_title('', false) . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
-        echo $before . _e("Articles posted by","weblizar") . $userdata->display_name . $after;
+        echo $before . _e("Articles posted by","enigma") . $userdata->display_name . $after;
     } elseif (is_404()) {
-        echo $before . _e("Error 404","weblizar") . $after;
+        echo $before . _e("Error 404","enigma") . $after;
     }
     
     echo '</ul>';
@@ -309,10 +419,10 @@
 	* =================================================================================*/
 	function weblizar_author_profile( $contactmethods ) {	
 	
-	$contactmethods['youtube_profile'] = __('Youtube Profile URL','weblizar');	
-	$contactmethods['twitter_profile'] = __('Twitter Profile URL','weblizar');
-	$contactmethods['facebook_profile'] = __('Facebook Profile URL','weblizar');
-	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','weblizar');
+	$contactmethods['youtube_profile'] = __('Youtube Profile URL','enigma');	
+	$contactmethods['twitter_profile'] = __('Twitter Profile URL','enigma');
+	$contactmethods['facebook_profile'] = __('Facebook Profile URL','enigma');
+	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','enigma');
 	
 	return $contactmethods;
 	}
@@ -347,25 +457,67 @@
 	</span> 
 	</nav>
 	</div>	
-<?php 
+<?php
 	}
 if (is_admin()) {
-	require_once('core/admin/admin.php');
-}	
-?>
+	require_once('core/admin/admin-themes.php');
+	
+}
+/*
+global $wp_version;
+	if ( version_compare( $wp_version, '3.4', '>=' ) ) :
+		add_theme_support( 'custom-header' );
+	else :
+		add_custom_image_header( $wp_head_callback, $admin_head_callback );
+	endif;
+	*/
 
-<?php
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-  register_post_type( 'Projects',
-    array(
-      'labels' => array(
-        'name' => __( 'Projects' ),
-        'singular_name' => __( 'Project' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-    )
-  );
+//Plugin Recommend
+add_action('tgmpa_register','enigma_plugin_recommend');
+function enigma_plugin_recommend(){
+	$plugins = array(
+	array(
+            'name'      => 'Responsive Coming Soon',
+            'slug'      => 'responsive-coming-soon-page',
+            'required'  => false,
+        ),/* 
+	array(
+            'name'      => 'Photo Video Link Gallery',
+            'slug'      => 'photo-video-link-gallery',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Lightbox Gallery',
+            'slug'      => 'simple-lightbox-gallery',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Instagram Gallery',
+            'slug'      => 'gallery-for-instagram',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Ultimate Responsive Image Slider',
+            'slug'      => 'ultimate-responsive-image-slider',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Flickr Album Gallery',
+            'slug'      => 'flickr-album-gallery',
+            'required'  => false,
+        ),*/
+	array(
+            'name'      => 'Appointment Scheduler',
+            'slug'      => 'appointment-scheduler-weblizar',
+            'required'  => false,
+        ), 
+	array(
+            'name'      => 'Admin Custom Login',
+            'slug'      => 'admin-custom-login',
+            'required'  => false,
+        )
+		
+	);
+    tgmpa( $plugins );
 }
 ?>

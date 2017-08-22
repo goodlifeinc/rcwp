@@ -33,26 +33,26 @@
 		<div class="row">
 		<div class="col-md-6 col-sm-3">
 		<?php if(get_the_tag_list() != '') { ?>
-		<p class="enigma_tags"><?php the_tags( __('Tags : ','weblizar'), '', '<br />'); ?></p>
+		<p class="enigma_tags"><?php the_tags( __('Tags : ','enigma'), '', '<br />'); ?></p>
 		<?php } ?>
 		</div>
 		<div class="col-md-6 col-sm-3">
 		<?php if(get_the_category_list() != '') { ?>
-		<p class="enigma_cats"><?php echo __("Category : ",'weblizar');
+		<p class="enigma_cats"><?php echo __("Category : ",'enigma');
 		the_category(' , '); ?></p>
 		<?php } ?>
 		</div>
 		</div>
-		<?php the_content( __( 'Read More' , 'weblizar' ) ); 
+		<?php the_content( __( 'Read More' , 'enigma' ) ); 
 		$defaults = array(
-              'before'           => '<div class="enigma_blog_pagination"><div class="enigma_blog_pagi">' . __( 'Pages:','weblizar'  ),
+              'before'           => '<div class="enigma_blog_pagination"><div class="enigma_blog_pagi">' . __( 'Pages:','enigma'  ),
               'after'            => '</div></div>',
 	          'link_before'      => '',
 	          'link_after'       => '',
 	          'next_or_number'   => 'number',
 	          'separator'        => ' ',
-	          'nextpagelink'     => __( 'Next page'  ,'weblizar' ),
-	          'previouspagelink' => __( 'Previous page' ,'weblizar'),
+	          'nextpagelink'     => __( 'Next page'  ,'enigma' ),
+	          'previouspagelink' => __( 'Previous page' ,'enigma'),
 	          'pagelink'         => '%',
 	          'echo'             => 1
 	          );

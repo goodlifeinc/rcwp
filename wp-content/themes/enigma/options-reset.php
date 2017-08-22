@@ -6,6 +6,7 @@ $wl_theme_options = weblizar_get_options();
 
 function wl_reset_general_setting()
 {
+	$wl_theme_options['upload__header_image']="";
 	$wl_theme_options['upload_image_logo']="";
 	$wl_theme_options['height']=55;
 	$wl_theme_options['width']=150;

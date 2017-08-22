@@ -5,13 +5,113 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+
+@Version: 3.4 [16-08-2017]
+Icon picker feature added in Service Options.
+
+@Version: 3.3 [12-07-2017]
+New feature add in Blog Option.
+Excerpt Option added.
+
+@Version: 3.2 [20-06-2017]
+Minor changes in header
+
+@Version: 3.1 [02-06-2017]
+Minor changes in header
+
+@Version: 3.0 [26-05-2017]
+Minor changes
+
+
+@Version: 2.9 [27-04-2017]
+1. Extra Section for Child-Theme.
+2. Coupon Code added.
+
+
+
+@Version: 2.8.6 [06-04-2017]
+1. Appointment Schedular plugin added in plugin recommendation.
+2. Logo/Site Title Center feature added.
+
+@Version: 2.8.5 [20/03/2017]
+1. Minor changes in custom header.
+
+CHANGE-LOG:
+@Version: 2.8.4 [16/02/2017]
+Gallery bug fixed.
+
+@Version: 2.8.3 [2/02/2017]
+1. Header text color support added.
+
+CHANGE-LOG:
+@Version: 2.8.2 [24/01/2017]
+1. Snow effect removed.
+2. Minor issue Fixed.
+
+@Version: 2.8.1 [29/12/2016]
+1. Slider interval added.
+
+@Version: 2.8 [22/12/2016]
+1. Custom-header image added.
+2. FontAwesome library updated version 4.7.0
+3. Snow effect added
+
+@Version: 2.7.2 [02/12/2016]
+Minor Update in Social Icons [whatsapp link]
+
+@Version: 2.7.1 [29/11/2016]
+1.Minor Fixes.
+2.Updated Pro Themes and Plugins Page with features.
+
+
+@Version: 2.7 [26/11/2016]
+1. FA library.
+2. More social icon added in header and footer.
+
+
+@Version: 2.6 [14/09/2016]
+1.	Plugin Recommandation.
+2.  Minor Fix.
+3.  Tags updated.
+
+@Version: 2.5 [05/08/2016]
+1. Updated Pro Themes and Plugins Page with Upcoming Premium Theme Features.
+2. Minor Issue Fixed.
+
+CHANGE-LOG:
+@Version: 2.4.3 [06/07/2016]
+1. Minor issue fixed.
+2. Link updated in Pro themes .
+3. Twitter spelling corretions.
+
+@Version: 2.4.2 [10/06/2016]
+1. woocomerce minor fix.
+2. Updated Pro Themes and Plugins Page with features.
+
+@Version: 2.4.1 [18/05/2016]
+1. Minor issue fixed.
+
+CHANGE-LOG:
+@Version: 2.4 [07/05/2016]
+1. Update Pro Themes and Plugins Page with features.
+2. Minor Google Font issue fixed.
+
+
+@Version: 2.3 [04/03/2016]
+1. Google font option added.
+2. Some other minor issue fixed.
+
+@Version: 2.3 [04/03/2016]
+1. Remove Theme Option Page.
+2. Service Link Added in Customizer.
+3. Service On/Off.
+4. Footer-Call-Out icon setting added.
+
 @Version: 2.2 [17/10/2015]
 1. Mobils Menus Fix.
 
-
 @Version: 2.1 [08/10/2015]
 1. Parallax Layout in *Premium Theme added..
-
 
 @Version: 2.0 [24/09/2015]
 1. Menus Fixes.

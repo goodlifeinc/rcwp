@@ -7,7 +7,7 @@ Author: Kieran O'Shea
 Author URI: http://www.kieranoshea.com
 Text Domain: calendar
 Domain Path: /languages
-Version: 1.3.6
+Version: 1.3.9
 */
 
 /*  Copyright 2008  Kieran O'Shea  (email : kieran@kieranoshea.com)
@@ -36,14 +36,6 @@ global $wpdb;
 define('WP_CALENDAR_TABLE', $wpdb->prefix . 'calendar');
 define('WP_CALENDAR_CONFIG_TABLE', $wpdb->prefix . 'calendar_config');
 define('WP_CALENDAR_CATEGORIES_TABLE', $wpdb->prefix . 'calendar_categories');
-
-// All items in a GET query must be query_vars
-function calendar_add_query_vars_filter( $vars ){
-    $vars[] = "month";
-    $vars[] = "yr";
-    return $vars;
-}
-add_filter( 'query_vars', 'calendar_add_query_vars_filter' );
 
 // Check ensure calendar is installed and install it if not - required for
 // the successful operation of most functions called from this point on
@@ -74,6 +66,31 @@ add_action('widgets_init', 'widget_init_events_calendar');
 // Add the short code
 add_shortcode( 'calendar', 'calendar_shortcode_insert' );
 add_filter('widget_text', 'do_shortcode');
+
+// Add feed functionality from separate file
+add_action( 'init', 'calendar_feed_init_internal' );
+function calendar_feed_init_internal()
+{
+    add_rewrite_rule( 'calendar-feed$', 'index.php?calendar_feed=1', 'top' );
+}
+
+add_filter( 'query_vars', 'calendar_feed_query_vars' );
+function calendar_feed_query_vars( $query_vars )
+{
+    $query_vars[] = 'calendar_feed';
+    return $query_vars;
+}
+
+add_action( 'parse_request', 'calendar_feed_parse_request' );
+function calendar_feed_parse_request( &$wp )
+{
+    if ( array_key_exists( 'calendar_feed', $wp->query_vars ) ) {
+        global $wpdb;
+        include 'calendar-feed.php';
+        exit();
+    }
+    return;
+}
 
 // Function to deal with events posted by a user when that user is deleted
 function deal_with_deleted_user($id)
@@ -352,7 +369,7 @@ function calendar_insert($content)
       } else {
 	$cal_output = calendar();
       }
-      $content = preg_replace('/\{CALENDAR*.+\}/',$cal_output,$content);
+      $content = preg_replace('/\{CALENDAR*.+\}/',preg_replace('/\$(\d)/','\\\$$1',$cal_output),$content);
     }
   return $content;
 }
@@ -370,7 +387,7 @@ function minical_insert($content)
       } else {
 	$cal_output = minical();
       }
-      $content = preg_replace('/\{MINICAL*.+\}/',$cal_output,$content);
+      $content = preg_replace('/\{MINICAL*.+\}/',preg_replace('/\$(\d)/','\\\$$1',$cal_output),$content);
     }
   return $content;
 }
@@ -388,7 +405,7 @@ function upcoming_insert($content)
       } else {
 	$cal_output = '<span class="page-upcoming-events">'.upcoming_events().'</span>';
       }
-      $content = preg_replace('/\{UPCOMING_EVENTS*.+\}/',$cal_output,$content);
+      $content = preg_replace('/\{UPCOMING_EVENTS*.+\}/',preg_replace('/\$(\d)/','\\\$$1',$cal_output),$content);
     }
   return $content;
 }
@@ -404,7 +421,7 @@ function todays_insert($content)
       } else {
 	$cal_output = '<span class="page-todays-events">'.todays_events().'</span>';
       }
-      $content = preg_replace('/\{TODAYS_EVENTS*.+\}/',$cal_output,$content);
+      $content = preg_replace('/\{TODAYS_EVENTS*.+\}/',preg_replace('/\$(\d)/','\\\$$1',$cal_output),$content);
     }
   return $content;
 }
@@ -422,7 +439,7 @@ function check_calendar()
 
   // Version info
   $calendar_version_option = 'calendar_version';
-  $calendar_version = '1.3.6';
+  $calendar_version = '1.3.9';
 
   // All this style info will go into the database on a new install
   // This looks nice in the TwentyTen theme
@@ -778,6 +795,12 @@ function check_calendar()
       $wpdb->get_results("ALTER TABLE " . WP_CALENDAR_TABLE . " CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci");
       $wpdb->get_results("ALTER TABLE " . WP_CALENDAR_CONFIG_TABLE . " CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci");
       $wpdb->get_results("ALTER TABLE " . WP_CALENDAR_CATEGORIES_TABLE . " CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci");
+
+      // We have feed for the first time, add the config option
+      if ($wpdb->get_var("SELECT count(*) FROM " . WP_CALENDAR_CONFIG_TABLE . " WHERE config_item='enable_feed'") == 0) {
+        $sql = "INSERT INTO " . WP_CALENDAR_CONFIG_TABLE . " SET config_item='enable_feed', config_value='false'";
+        $wpdb->get_results($sql);
+      }
 
       // Mark the version as latest
       update_option($calendar_version_option, $calendar_version, 'yes');
@@ -1601,6 +1624,15 @@ function edit_calendar_config()
 	        $enable_categories = 'false';
         }
 
+      if ($_POST['enable_feed'] == 'on')
+        {
+            $enable_feed = 'true';
+        }
+      else
+        {
+            $enable_feed = 'false';
+        }
+
       if ($_POST['show_attribution_link'] == 'on') {
           $show_attribution_link = 'true';
       } else {
@@ -1615,6 +1647,7 @@ function edit_calendar_config()
       $wpdb->get_results($wpdb->prepare("UPDATE " . WP_CALENDAR_CONFIG_TABLE . " SET config_value = '%s' WHERE config_item='display_upcoming'",$disp_upcoming));
       $wpdb->get_results($wpdb->prepare("UPDATE " . WP_CALENDAR_CONFIG_TABLE . " SET config_value = '%d' WHERE config_item='display_upcoming_days'",$display_upcoming_days));
       $wpdb->get_results($wpdb->prepare("UPDATE " . WP_CALENDAR_CONFIG_TABLE . " SET config_value = '%s' WHERE config_item='enable_categories'",$enable_categories));
+      $wpdb->get_results($wpdb->prepare("UPDATE " . WP_CALENDAR_CONFIG_TABLE . " SET config_value = '%s' WHERE config_item='enable_feed'",$enable_feed));
       $attribution_present = $wpdb->get_results("SELECT config_value FROM " . WP_CALENDAR_CONFIG_TABLE . " WHERE config_item='show_attribution_link'");
       if (empty($attribution_present)) {
           $wpdb->get_results("INSERT INTO " . WP_CALENDAR_CONFIG_TABLE . " SET config_item='show_attribution_link', config_value='false'");
@@ -1743,6 +1776,23 @@ function edit_calendar_config()
             }
         }
     }
+  $configs = $wpdb->get_results("SELECT config_value FROM " . WP_CALENDAR_CONFIG_TABLE . " WHERE config_item='enable_feed'");
+  $yes_enable_feed = '';
+  $no_enable_feed = '';
+  if (!empty($configs))
+    {
+      foreach ($configs as $config)
+        {
+          if ($config->config_value == 'true')
+            {
+                $yes_enable_feed = 'selected="selected"';
+            }
+          else
+            {
+                $no_enable_feed = 'selected="selected"';
+            }
+        }
+    }
   $configs = $wpdb->get_results("SELECT config_value FROM " . WP_CALENDAR_CONFIG_TABLE . " WHERE config_item='show_attribution_link'");
   $yes_show_attribution_link = '';
   $no_show_attribution_link = '';
@@ -1859,6 +1909,14 @@ function edit_calendar_config()
                                 <td>    <select name="enable_categories">
 				                <option value="on" <?php echo $yes_enable_categories ?>><?php _e('Yes','calendar') ?></option>
 						<option value="off" <?php echo $no_enable_categories ?>><?php _e('No','calendar') ?></option>
+                                    </select>
+                                </td>
+                                </tr>
+                                <tr>
+                <td><legend><?php _e('Enable iCalendar feed?','calendar'); ?></legend></td>
+                                <td>    <select name="enable_feed">
+                        <option value="on" <?php echo $yes_enable_feed ?>><?php _e('Yes','calendar') ?></option>
+                        <option value="off" <?php echo $no_enable_feed ?>><?php _e('No','calendar') ?></option>
                                     </select>
                                 </td>
                                 </tr>
@@ -2654,8 +2712,8 @@ ORDER BY event_id";
 // Setup comparison functions for building the calendar later
 function calendar_month_comparison($month)
 {
-  $get_year = get_query_var('yr');
-  $get_month = get_query_var('month');
+  $get_year = (isset($_GET['yr']) ? $_GET['yr'] : null);
+  $get_month = (isset($_GET['month']) ? $_GET['month'] : null);
   $current_month = strtolower(date("M", ctwo()));
   if (isset($get_year) && isset($get_month))
     {
@@ -2671,8 +2729,8 @@ function calendar_month_comparison($month)
 }
 function calendar_year_comparison($year)
 {
-  $get_year = get_query_var('yr');
-  $get_month = get_query_var('month');
+  $get_year = (isset($_GET['yr']) ? $_GET['yr'] : null);
+  $get_month = (isset($_GET['month']) ? $_GET['month'] : null);
   $current_year = strtolower(date("Y", ctwo()));
   if (isset($get_year) && isset($get_month))
     {
@@ -2694,8 +2752,8 @@ function calendar($cat_list = '')
 {
   global $wpdb;
 
-    $get_year = get_query_var('yr');
-    $get_month = get_query_var('month');
+    $get_year = (isset($_GET['yr']) ? $_GET['yr'] : null);
+    $get_month = (isset($_GET['month']) ? $_GET['month'] : null);
 
     // Deal with the week not starting on a monday
     if (get_option('start_of_week') == 0)
@@ -2799,7 +2857,7 @@ function calendar($cat_list = '')
 	parse_str($_SERVER['QUERY_STRING'],$qsa);
 	foreach ($qsa as $name => $argument)
 	  {
-	    if ($name != 'month' && $name != 'yr')
+	    if ($name != 'month' && $name != 'yr' && preg_match("/^[A-Za-z0-9\-\_]+$/",$name) && preg_match("/^[A-Za-z0-9\-\_]+$/",$argument))
 	      {
 		$calendar_body .= '<input type="hidden" name="'.strip_tags($name).'" value="'.strip_tags($argument).'" />
 ';
@@ -3021,8 +3079,8 @@ function minical($cat_list = '') {
   
   global $wpdb;
 
-  $get_year = get_query_var('yr');
-  $get_month = get_query_var('month');
+  $get_year = (isset($_GET['yr']) ? $_GET['yr'] : null);
+  $get_month = (isset($_GET['month']) ? $_GET['month'] : null);
 
   // Deal with the week not starting on a monday                                                                                                                                  
   if (get_option('start_of_week') == 0)

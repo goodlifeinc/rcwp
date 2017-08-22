@@ -4,7 +4,7 @@
 		<div class="row">
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
-			<h1><?php printf( __( 'Search Results for: %s', 'weblizar' ), '<span>' . get_search_query() . '</span>'  ); ?>
+			<h1><?php printf( __( 'Search Results for: %s', 'enigma' ), '<span>' . get_search_query() . '</span>'  ); ?>
 			</h1>
 			</div>
 		<?php endif; ?>
